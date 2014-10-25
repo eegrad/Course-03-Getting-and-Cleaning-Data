@@ -11,9 +11,13 @@
 
 library(data.table)
 
-# Download and unzip the file from URL provided
-URL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file(URL,  destfile = "getdata-projectfiles-UCI HAR Dataset.zip")
+# Download the file from URL provided, incase if the file does not exist
+if (!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")){
+        URL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+        download.file(URL,  destfile = "getdata-projectfiles-UCI HAR Dataset.zip")
+}
+
+#Unzip the file in the working directory 
 unzip("getdata-projectfiles-UCI HAR Dataset.zip")
 
 # Read the test data from unzipped folder
