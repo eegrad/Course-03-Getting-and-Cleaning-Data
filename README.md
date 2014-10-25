@@ -1,4 +1,4 @@
-# Readme File for run_analysis.R
+## Readme File for run_analysis.R
 
 ###Following steps are performed in this file in order to create the tidy_data.txt file
 
